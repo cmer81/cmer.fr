@@ -18,6 +18,11 @@
   const els = document.querySelectorAll('.fade-in');
   if (!els.length) return;
 
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('visible'); });
+    return;
+  }
+
   const observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
