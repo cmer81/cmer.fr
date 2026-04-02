@@ -61,6 +61,63 @@
 
   function printBlank() { print(''); }
 
+  /* ─── Command history ──────────────────────────────────── */
+  var cmdHistory = [];
+  var histIdx = -1;
+
+  /* ─── COMMANDS ─────────────────────────────────────────── */
+  var COMMANDS = {};
+
+  /* ─── Dispatcher ───────────────────────────────────────── */
+  function run(raw) {
+    var trimmed = raw.trim();
+    if (!trimmed) return;
+
+    // Record history
+    cmdHistory.unshift(trimmed);
+    histIdx = -1;
+
+    // Echo the command
+    print('❯ ' + trimmed, 'dim');
+
+    // Parse
+    var parts = trimmed.split(/\s+/);
+    var cmd   = parts[0].toLowerCase();
+    var args  = parts.slice(1);
+
+    // Dispatch
+    if (COMMANDS[cmd]) {
+      COMMANDS[cmd](args);
+    } else {
+      print(cmd + ': command not found — try \'help\'', 'error');
+    }
+    printBlank();
+  }
+
+  /* ─── Input wiring ─────────────────────────────────────── */
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      var val = input.value;
+      input.value = '';
+      run(val);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (histIdx < cmdHistory.length - 1) {
+        histIdx++;
+        input.value = cmdHistory[histIdx];
+      }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (histIdx > 0) {
+        histIdx--;
+        input.value = cmdHistory[histIdx];
+      } else {
+        histIdx = -1;
+        input.value = '';
+      }
+    }
+  });
+
   /* ─── Trigger: press '/' anywhere ─────────────────────── */
   document.addEventListener('keydown', function (e) {
     var tag = (document.activeElement || {}).tagName;
