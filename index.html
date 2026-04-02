@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cedric Mercier — Lead Platform Engineer. Infrastructure cloud, Kubernetes, CI/CD. Basé à Rodez, disponible en remote.">
+  <title>Cedric Mercier — Lead Platform Engineer</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ─── Hero ───────────────────────────────────────────── */
+    .hero {
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px var(--padding-x) 60px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .hero-prompt {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--green);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-prompt::before {
+      content: '$';
+      color: var(--blue);
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 7vw, 72px);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      color: var(--blue);
+      font-weight: 400;
+      margin-bottom: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-bio {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 560px;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 48px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      background: var(--border-green);
+      color: var(--text-primary);
+      border: 1px solid var(--green);
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--green); color: var(--bg); }
+
+    .btn-secondary {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--blue);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-blue);
+      padding-bottom: 1px;
+    }
+
+    /* ─── About ──────────────────────────────────────────── */
+    .about-section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 72px var(--padding-x);
+    }
+
+    .about-section .section-label { margin-bottom: 8px; }
+
+    .about-section h2 {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: var(--text-primary);
+      margin-bottom: 40px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-text {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+
+    .about-text p + p { margin-top: 20px; }
+
+    .about-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .stat-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+    }
+
+    .stat-num {
+      font-family: var(--font-mono);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    /* ─── Responsive ─────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .hero h1 { letter-spacing: -1px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">cmer<span>@</span>cmer.fr</a>
+    <a href="index.html" class="nav-link">~</a>
+    <a href="parcours.html" class="nav-link">parcours</a>
+    <a href="competences.html" class="nav-link">compétences</a>
+    <a href="contact.html" class="nav-link">contact</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-prompt">whoami<span class="cursor"></span></div>
+    <h1>Cedric<br>Mercier</h1>
+    <div class="hero-title">Lead Platform Engineer</div>
+    <p class="hero-bio">
+      J'orchestre des infrastructures complexes dans des environnements cloud — AWS, GCP, Cloudflare.
+      Kubernetes, CI/CD, sécurité réseau : mon terrain de jeu depuis plus de 15 ans.
+    </p>
+    <div class="hero-tags">
+      <span class="tag tag--blue">Kubernetes</span>
+      <span class="tag tag--green">Docker</span>
+      <span class="tag tag--blue">AWS</span>
+      <span class="tag tag--blue">GCP</span>
+      <span class="tag tag--purple">Cloudflare</span>
+      <span class="tag tag--orange">CI/CD</span>
+      <span class="tag">Linux</span>
+      <span class="tag">OpenStack</span>
+    </div>
+    <div class="hero-cta">
+      <a href="parcours.html" class="btn-primary">→ Voir mon parcours</a>
+      <a href="contact.html" class="btn-secondary">me contacter</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="about-section">
+    <div class="section-label fade-in">about</div>
+    <h2 class="fade-in">À propos</h2>
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p>Basé à Rodez, je travaille sur des sujets d'infrastructure cloud, de performance et de sécurité depuis 2009.</p>
+        <p>Actuellement Lead Platform Engineer chez Libeo, j'ai auparavant passé 6 ans chez le Groupe ADEO (Leroy Merlin) à piloter la stratégie DevOps sur des sites à fort trafic.</p>
+        <p>J'aime les systèmes bien construits, les migrations sans coupure et les équipes autonomes.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card fade-in">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">ans d'expérience en infrastructure</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="stat-num">5</div>
+          <div class="stat-label">entreprises, du hébergeur à la scale-up</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="stat-num" style="font-size: 18px; color: var(--purple);">Rodez, France</div>
+          <div class="stat-label">basé à · disponible en remote</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
