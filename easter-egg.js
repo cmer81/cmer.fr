@@ -564,6 +564,155 @@
     ], 'plain');
   };
 
+  /* ─── Cloud ────────────────────────────────────────────── */
+  COMMANDS['aws'] = function (args) {
+    var sub = args.join(' ').toLowerCase();
+    if (sub === 's3 ls') {
+      printLines([
+        '2024-01-15 09:00:00  cmer-backups',
+        '2024-03-20 14:30:00  cmer-assets-prod',
+        '2025-06-01 08:00:00  cmer-logs-archive',
+        '2026-01-10 11:00:00  cmer-terraform-state'
+      ], 'plain');
+    } else {
+      print('aws: unknown command "' + args.join(' ') + '" — try: aws s3 ls', 'warn');
+    }
+  };
+
+  COMMANDS['gcloud'] = function (args) {
+    var sub = args.join(' ').toLowerCase();
+    if (sub === 'compute instances list') {
+      printLines([
+        'NAME             ZONE            MACHINE_TYPE  PREEMPTIBLE  INTERNAL_IP  STATUS',
+        'k8s-master-1     europe-west1-b  e2-standard-4  No          10.0.0.2     RUNNING',
+        'k8s-worker-1     europe-west1-b  e2-standard-8  No          10.0.0.3     RUNNING',
+        'k8s-worker-2     europe-west1-c  e2-standard-8  No          10.0.0.4     RUNNING'
+      ], 'plain');
+    } else {
+      print('gcloud: unknown command — try: gcloud compute instances list', 'warn');
+    }
+  };
+
+  COMMANDS['cf'] = function (args) {
+    var sub = args.join(' ').toLowerCase();
+    if (sub === 'workers list') {
+      printLines([
+        'Name            Status   Requests (24h)  CPU (ms)',
+        'cmer-website    Active   12,483          0.4',
+        'cmer-api-proxy  Active    3,291          1.2'
+      ], 'plain');
+    } else {
+      print('cf: unknown command — try: cf workers list', 'warn');
+    }
+  };
+
+  /* ─── Fun ──────────────────────────────────────────────── */
+  COMMANDS['sl'] = function () {
+    printLines([
+      '      ====        ________                ___________     ',
+      '  _D _|  |_______/        \\__I_I_____===__|_________|    ',
+      '   |(_)---  |   H\\________/ |   |        =|___ ___|     ',
+      '   /     |  |   H  |  |     |   |         ||_| |_||     ',
+      '  |      |  |   H  |__--------------------| [___] |     ',
+      '  | ________|___H__/__|_____/[][]~\\_______|       |     ',
+      '  |/ |   |-----------I_____I [][] []  D   |=======|__   ',
+      '__/ =| o |=-~~\\  /~~\\  /~~\\  /~~\\ ____Y___________|__  ',
+      ' |/-=|___|=    ||    ||    ||    |_____/~\\___/           ',
+      '  \\_/      \\__/  \\__/  \\__/  \\__/                       ',
+      '',
+      '🚂 chugga chugga chugga... train has left the station.'
+    ], 'plain');
+  };
+
+  var FORTUNES = [
+    '"Any sufficiently advanced technology is indistinguishable from magic." — A.C. Clarke',
+    '"It works on my machine." — Every developer, ever',
+    '"There are only two hard problems in CS: cache invalidation, naming, and off-by-one errors."',
+    '"The cloud is just someone else\'s Kubernetes cluster."',
+    '"kubectl delete pod --all -n production" is not a valid deployment strategy.',
+    '"In DevOps, we don\'t have problems. We have incidents with post-mortems."',
+    '"Documentation is like sex: when it\'s good, it\'s very good. When it\'s bad, it\'s better than nothing."'
+  ];
+
+  COMMANDS['fortune'] = function () {
+    print(FORTUNES[Math.floor(Math.random() * FORTUNES.length)], 'plain');
+  };
+
+  COMMANDS['cowsay'] = function (args) {
+    var text = args.length ? args.join(' ') : 'Moo! (hint: try cowsay <text>)';
+    var border = new Array(text.length + 2).join('-');
+    printLines([
+      ' ' + border,
+      '< ' + text + ' >',
+      ' ' + border,
+      '        \\   ^__^',
+      '         \\  (oo)\\_______',
+      '            (__)\\       )\\/\\',
+      '                ||----w |',
+      '                ||     ||'
+    ], 'plain');
+  };
+
+  COMMANDS['matrix'] = function () {
+    var chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEF';
+    var lines = 8;
+    var cols  = 60;
+    print('Entering the Matrix...', 'warn');
+    input.disabled = true;
+    var i = 0;
+    var interval = setInterval(function () {
+      var row = '';
+      for (var c = 0; c < cols; c++) {
+        row += chars[Math.floor(Math.random() * chars.length)];
+      }
+      print(row);
+      i++;
+      if (i >= lines) {
+        clearInterval(interval);
+        input.disabled = false;
+        input.focus();
+        print('Wake up, Cedric...', 'warn');
+      }
+    }, 120);
+  };
+
+  COMMANDS['neofetch'] = function () {
+    printLines([
+      '       .::.          cmer@cmer.fr',
+      '     .:::::.         --------------',
+      '    ::     ::        OS: cmer.fr Linux x86_64',
+      '   ::  ⎈   ::        Host: Cloudflare Pages',
+      '    ::     ::        Kernel: 6.1.0-platform',
+      '     .:::::.         Uptime: 15+ years',
+      '       .::.          Shell: bash 5.2.15',
+      '                     Resolution: whatever your screen is',
+      '                     CPU: Brain @ 3.6GHz (overclocked on coffee)',
+      '                     Memory: 15+ years of infra knowledge',
+      '                     Languages: Bash, Python, Go, YAML',
+      '                     Hobbies: K8s, CI/CD, Rodez ☀️'
+    ], 'plain');
+  };
+
+  COMMANDS['make'] = function () {
+    print('make: *** No targets specified and no makefile found. Stop.', 'error');
+  };
+
+  COMMANDS['hack'] = function () {
+    print('Initializing hack sequence...', 'warn');
+    setTimeout(function () { print('Bypassing firewall...', 'warn'); }, 400);
+    setTimeout(function () { print('Decrypting mainframe...', 'warn'); }, 800);
+    setTimeout(function () { print('ACCESS GRANTED', 'info'); }, 1200);
+    setTimeout(function () { print('Just kidding. There\'s nothing to hack here. 😄', 'plain'); }, 1600);
+  };
+
+  COMMANDS['reboot'] = function () {
+    print('Broadcast message from cedric@cmer.fr:', 'warn');
+    print('The system is going down for reboot NOW!', 'warn');
+    setTimeout(function () { print('Syncing filesystems...', 'dim'); }, 400);
+    setTimeout(function () { print('Unmounting filesystems...', 'dim'); }, 800);
+    setTimeout(function () { print('System halted.', 'dim'); close(); }, 1400);
+  };
+
   /* ─── Dispatcher ───────────────────────────────────────── */
   function run(raw) {
     var trimmed = raw.trim();
