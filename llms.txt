@@ -1,0 +1,28 @@
+# Cedric Mercier
+
+> Lead Platform Engineer spécialisé en infrastructure cloud (AWS, GCP, Cloudflare), Kubernetes et CI/CD. Basé à Rodez, France. Disponible en remote.
+
+## Pages
+
+- [Accueil](https://cmer.fr/): Présentation de Cedric Mercier, Lead Platform Engineer avec 15+ ans d'expérience en infrastructure cloud, Kubernetes et CI/CD. Inclut une section À propos avec parcours synthétique.
+- [Parcours](https://cmer.fr/parcours.html): Timeline détaillée des 5 expériences professionnelles de 2009 à aujourd'hui — Libeo (2021-présent), Groupe ADEO/Leroy Merlin (2015-2021), GFI Informatique (2012-2015), Hebergement-vous (2009-2011).
+- [Compétences](https://cmer.fr/competences.html): Compétences techniques organisées en 4 catégories : Orchestration (Kubernetes, Docker, Helm, OpenShift), Cloud (Cloudflare, AWS, GCP, OpenStack), CI/CD & Automatisation (GitLab, GitHub Actions, Linux, Terraform, Ansible), Réseau & Sécurité (Tailscale, VMware). Technologies secondaires : Elasticsearch, Redis, MySQL, HaProxy, Prometheus, Grafana, RAG/IA.
+- [Contact](https://cmer.fr/contact.html): Coordonnées de Cedric Mercier — email cmer@cmer.fr, profil LinkedIn, profil GitHub (cmer81), localisation Rodez France.
+
+## Key Facts
+
+- Lead Platform Engineer depuis 2021 chez Libeo
+- Expérience infrastructure depuis 2009 (15+ ans)
+- Tech Leader DevOps chez Groupe ADEO (Leroy Merlin) de 2015 à 2021 — architectures haute dispo pour leroymerlin.fr et sites du groupe
+- Expert Kubernetes, Docker, Cloudflare, AWS, GCP, Linux, CI/CD
+- A conçu et déployé un système RAG (Retrieval-Augmented Generation) centralisant données GDrive, Notion, Slack, Jira
+- A orchestré une migration complète Google Cloud → OVH sans interruption de service
+- Basé à Rodez (Aveyron), France — disponible pour missions en remote
+- Missions freelance : à venir
+
+## Contact
+
+- Website: https://cmer.fr
+- Email: cmer@cmer.fr
+- LinkedIn: https://www.linkedin.com/in/google-cloud/
+- GitHub: https://github.com/cmer81
