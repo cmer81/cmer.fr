@@ -1,0 +1,9 @@
+# Brainstorming / outils
+.superpowers/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
