@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacter Cedric Mercier — cmer@cmer.fr — Lead Platform Engineer basé à Rodez.">
+  <title>Contact — Cedric Mercier</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 72px var(--padding-x);
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-page .section-label { margin-bottom: 8px; }
+
+    .contact-page h1 {
+      font-size: clamp(32px, 4vw, 40px);
+      font-weight: 600;
+      letter-spacing: -1px;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .contact-intro {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-weight: 300;
+      max-width: 480px;
+      margin-bottom: 48px;
+    }
+
+    /* ─── Grille de cartes ────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .contact-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s;
+    }
+
+    .contact-card:hover { border-color: var(--border-hover); }
+    .contact-card--email:hover  { border-color: var(--border-blue); }
+    .contact-card--linkedin:hover { border-color: var(--border-blue); }
+    .contact-card--github:hover { border-color: var(--border-green); }
+    .contact-card--location:hover { border-color: var(--border-purple); }
+
+    .contact-card-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-secondary);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .contact-card-value {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      color: var(--blue);
+      font-weight: 400;
+      word-break: break-all;
+    }
+
+    .contact-card-value--green  { color: var(--green); }
+    .contact-card-value--purple { color: var(--purple); }
+
+    .contact-card-sub {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    /* ─── Bloc terminal décoratif ─────────────────────────── */
+    .terminal-block {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+    }
+
+    .t-line {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .t-line:last-child { margin-bottom: 0; }
+
+    .t-ps     { color: var(--blue); }
+    .t-cmd    { color: var(--green); }
+    .t-flag   { color: var(--purple); }
+    .t-string { color: var(--orange); }
+    .t-ok     { color: var(--green); }
+
+    /* ─── Responsive ─────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">cmer<span>@</span>cmer.fr</a>
+    <a href="index.html" class="nav-link">~</a>
+    <a href="parcours.html" class="nav-link">parcours</a>
+    <a href="competences.html" class="nav-link">compétences</a>
+    <a href="contact.html" class="nav-link">contact</a>
+  </nav>
+
+  <div class="contact-page">
+    <div class="section-label fade-in">contact</div>
+    <h1 class="fade-in">Restons en contact</h1>
+    <p class="contact-intro fade-in">
+      Une question, un projet, ou simplement envie d'échanger ?<br>
+      L'email est le meilleur moyen de me joindre.
+    </p>
+
+    <div class="contact-grid">
+      <a href="mailto:cmer@cmer.fr" class="contact-card contact-card--email fade-in">
+        <div class="contact-card-label">Email</div>
+        <div class="contact-card-value">cmer@cmer.fr</div>
+        <div class="contact-card-sub">Réponse sous 24–48h</div>
+      </a>
+      <a href="https://www.linkedin.com/in/google-cloud/" target="_blank" rel="noopener" class="contact-card contact-card--linkedin fade-in">
+        <div class="contact-card-label">LinkedIn</div>
+        <div class="contact-card-value">linkedin.com/in/google-cloud</div>
+        <div class="contact-card-sub">Profil professionnel</div>
+      </a>
+      <a href="https://github.com/cmer81" target="_blank" rel="noopener" class="contact-card contact-card--github fade-in">
+        <div class="contact-card-label">GitHub</div>
+        <div class="contact-card-value contact-card-value--green">github.com/cmer81</div>
+        <div class="contact-card-sub">Projets &amp; contributions</div>
+      </a>
+      <div class="contact-card contact-card--location fade-in">
+        <div class="contact-card-label">Localisation</div>
+        <div class="contact-card-value contact-card-value--purple">Rodez, France</div>
+        <div class="contact-card-sub">Disponible en remote</div>
+      </div>
+    </div>
+
+    <div class="terminal-block fade-in">
+      <div class="t-line">
+        <span class="t-ps">$</span>
+        <span class="t-cmd">curl</span>
+        <span class="t-flag">-X POST</span>
+        <span class="t-string">"mailto:cmer@cmer.fr"</span>
+      </div>
+      <div class="t-line">
+        <span class="t-ps">&nbsp;</span>
+        <span>--data</span>
+        <span class="t-string">"Bonjour Cedric, j'ai un projet..."</span>
+      </div>
+      <div class="t-line">
+        <span class="t-ps">▸</span>
+        <span class="t-ok">200 OK</span>
+        <span>— message reçu</span>
+        <span class="cursor"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
