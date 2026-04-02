@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Parcours professionnel de Cedric Mercier — Lead Platform Engineer depuis 2009.">
+  <title>Parcours — Cedric Mercier</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-header {
+      margin-bottom: 64px;
+    }
+
+    .page-header .section-label { margin-bottom: 8px; }
+
+    /* ─── Timeline ────────────────────────────────────────── */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--green), var(--border));
+    }
+
+    .entry {
+      position: relative;
+      margin-bottom: 56px;
+    }
+
+    .entry:last-child { margin-bottom: 0; }
+
+    /* Point sur la ligne */
+    .entry::before {
+      content: '';
+      position: absolute;
+      left: -32px;
+      top: 8px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--border-green);
+    }
+
+    /* Point vert plein pour le poste actuel */
+    .entry--current::before {
+      background: var(--green);
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(63, 185, 80, 0.15);
+    }
+
+    .entry-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .entry-date {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-secondary);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .entry-date--current {
+      color: var(--green);
+      border-color: var(--border-green);
+    }
+
+    .entry-company {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--blue);
+    }
+
+    .entry h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      letter-spacing: -0.3px;
+    }
+
+    .entry-body {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+    }
+
+    .entry-body ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .entry-body li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      font-weight: 300;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .entry-body li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--border-green);
+      font-size: 10px;
+      top: 4px;
+    }
+
+    .entry-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .entry-tags .tag {
+      font-size: 11px;
+      padding: 2px 8px;
+    }
+
+    /* ─── Responsive ─────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .timeline { padding-left: 20px; }
+      .entry::before { left: -24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">cmer<span>@</span>cmer.fr</a>
+    <a href="index.html" class="nav-link">~</a>
+    <a href="parcours.html" class="nav-link">parcours</a>
+    <a href="competences.html" class="nav-link">compétences</a>
+    <a href="contact.html" class="nav-link">contact</a>
+  </nav>
+
+  <div class="page">
+    <div class="page-header fade-in">
+      <div class="section-label">experience</div>
+      <h1 class="page-title">Parcours</h1>
+    </div>
+
+    <div class="timeline">
+
+      <div class="entry entry--current fade-in">
+        <div class="entry-meta">
+          <span class="entry-date entry-date--current">sept. 2021 → présent</span>
+          <span class="entry-company">Libeo</span>
+        </div>
+        <h3>Lead Platform Engineer</h3>
+        <div class="entry-body">
+          <ul>
+            <li>Pilotage de la stratégie DevOps — amélioration continue, automatisation, CI/CD</li>
+            <li>Infrastructure cloud AWS, GCP, Cloudflare et OVH — optimisation des coûts et performances</li>
+            <li>Déploiement et gestion Kubernetes — scalabilité, haute disponibilité, sécurité</li>
+            <li>Conception et déploiement d'un système RAG centralisant les données d'entreprise (GDrive, Notion, Slack, Jira)</li>
+            <li>Migration complète de l'infrastructure Google Cloud vers OVH sans interruption de service</li>
+            <li>Monitoring temps réel — détection proactive des incidents avant impact utilisateur</li>
+          </ul>
+          <div class="entry-tags">
+            <span class="tag tag--blue">Kubernetes</span>
+            <span class="tag tag--blue">AWS</span>
+            <span class="tag tag--blue">GCP</span>
+            <span class="tag tag--purple">Cloudflare</span>
+            <span class="tag tag--green">CI/CD</span>
+            <span class="tag">RAG / IA</span>
+            <span class="tag">OVH</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry fade-in">
+        <div class="entry-meta">
+          <span class="entry-date">nov. 2015 → 2021</span>
+          <span class="entry-company">Groupe ADEO</span>
+        </div>
+        <h3>Tech Leader DevOps</h3>
+        <div class="entry-body">
+          <ul>
+            <li>Hébergement et architecture pour leroymerlin.fr, leroymerlin.com, weldom.fr et autres sites du groupe</li>
+            <li>Conception d'architectures haute disponibilité sur OpenStack et VMware</li>
+            <li>Design et déploiement d'un PaaS privé (OpenShift, Kubernetes, Docker)</li>
+            <li>Clusters Kubernetes sur GKE avec CI/CD GitLab et Helm</li>
+            <li>Migration d'applications internes vers le cloud — accompagnement des équipes projets</li>
+            <li>Mission de 6 mois à Moscou — accompagnement et montée en compétence des équipes locales</li>
+          </ul>
+          <div class="entry-tags">
+            <span class="tag tag--blue">Kubernetes</span>
+            <span class="tag tag--blue">GKE</span>
+            <span class="tag">OpenStack</span>
+            <span class="tag">VMware</span>
+            <span class="tag tag--green">GitLab CI</span>
+            <span class="tag">Helm</span>
+            <span class="tag">OpenShift</span>
+            <span class="tag">Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry fade-in">
+        <div class="entry-meta">
+          <span class="entry-date">fév. 2014 → nov. 2015</span>
+          <span class="entry-company">GFI Informatique</span>
+        </div>
+        <h3>Admin Application Server &amp; Messaging</h3>
+        <div class="entry-body">
+          <ul>
+            <li>N3 messagerie pour 22 000 collaborateurs ADEO — migration SAN, relation directe avec l'éditeur</li>
+            <li>N3 périmètre serveurs applicatifs — Oracle WebLogic, JBoss</li>
+            <li>Déploiement d'outils NoSQL, Elasticsearch</li>
+            <li>Formation N2 sur les procédures d'exploitation</li>
+          </ul>
+          <div class="entry-tags">
+            <span class="tag">WebLogic</span>
+            <span class="tag">JBoss</span>
+            <span class="tag">Elasticsearch</span>
+            <span class="tag">Linux</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry fade-in">
+        <div class="entry-meta">
+          <span class="entry-date">sept. 2012 → fév. 2014</span>
+          <span class="entry-company">GFI Informatique</span>
+        </div>
+        <h3>Administrateur Système N2</h3>
+        <div class="entry-body">
+          <ul>
+            <li>Gestion d'une plateforme Linux de plus de 1 500 serveurs</li>
+            <li>Mise en place d'une TME (Tierce Maintenance Exploitation) sur périmètre Linux</li>
+            <li>Gestion des incidents N2+ Linux, N2 Windows Server et VMware</li>
+            <li>Rédaction des DEX (Documentation d'Exploitation) pour autonomisation des équipes N1/N2</li>
+          </ul>
+          <div class="entry-tags">
+            <span class="tag">Linux RHEL</span>
+            <span class="tag">CentOS</span>
+            <span class="tag">VMware</span>
+            <span class="tag">Windows Server</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry fade-in">
+        <div class="entry-meta">
+          <span class="entry-date">mai 2009 → juil. 2011</span>
+          <span class="entry-company">Hebergement-vous</span>
+        </div>
+        <h3>Administrateur Système</h3>
+        <div class="entry-body">
+          <ul>
+            <li>Administration système en environnement RedHat, Debian GNU/Linux et Windows Server</li>
+            <li>Architecture haute disponibilité : HaProxy, MySQL cluster InnoDB, réplication master-slave</li>
+            <li>Optimisation MySQL, proxy-cache accélérateur web, sécurisation des environnements</li>
+          </ul>
+          <div class="entry-tags">
+            <span class="tag">Linux</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">HaProxy</span>
+            <span class="tag">Varnish</span>
+            <span class="tag">Debian</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
